@@ -1,0 +1,54 @@
+# Model Registry — tracks all ML models in the platform
+
+models:
+  clv_predictor:
+    version: "1.0.0"
+    algorithm: "XGBoost Regressor"
+    target: "customer_lifetime_value_12m"
+    status: "production"
+    accuracy_metric: "RMSE"
+    last_trained: "2024-06-01"
+    threshold_drift: 0.15
+
+  churn_classifier:
+    version: "1.0.0"
+    algorithm: "LightGBM Classifier"
+    target: "churn_probability_90d"
+    status: "production"
+    accuracy_metric: "AUC-ROC"
+    last_trained: "2024-06-01"
+    threshold_drift: 0.05
+
+  rfm_segmentation:
+    version: "1.0.0"
+    algorithm: "K-Means Clustering"
+    target: "customer_segment"
+    status: "production"
+    accuracy_metric: "Silhouette Score"
+    n_clusters: 5
+    last_trained: "2024-06-01"
+
+  route_demand_forecaster:
+    version: "1.0.0"
+    algorithm: "Prophet + SARIMA Ensemble"
+    target: "daily_bookings"
+    status: "production"
+    accuracy_metric: "MAPE"
+    forecast_horizon_days: 90
+    last_trained: "2024-06-01"
+
+  marketing_mix_model:
+    version: "1.0.0"
+    algorithm: "Bayesian Linear Regression (MMM)"
+    target: "bookings_attributed"
+    status: "production"
+    accuracy_metric: "R-squared"
+    last_trained: "2024-06-01"
+
+  markov_attribution:
+    version: "1.0.0"
+    algorithm: "Markov Chain (order-1)"
+    target: "channel_conversion_credit"
+    status: "production"
+    accuracy_metric: "Removal Effect"
+    last_trained: "2024-06-01"
